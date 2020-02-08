@@ -1,0 +1,13 @@
+Instalación de Paquetes Python.
+
+instalación de python:
+https://linuxconfig.org/how-to-install-python-in-ubuntu-18-04-bionic-beaver-linux
+
+Instalación de pip.
+https://www.saltycrane.com/blog/2010/02/how-install-pip-ubuntu/
+
+Instalación de numpy.
+pip install numpy
+
+Instalación de OpenCv
+sudo apt-get install python-opencv

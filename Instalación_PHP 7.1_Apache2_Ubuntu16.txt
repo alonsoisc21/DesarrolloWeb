@@ -1,0 +1,16 @@
+# Instalación de PHP 7.1 y Apache2 en Ubuntu 16.04
+# link de referencia: 
+#	https://www.rosehosting.com/blog/install-php-7-1-with-nginx-on-an-ubuntu-16-04-vps/
+#	https://docs.bluehosting.cl/tutoriales/servidores/inicio-y-reinicio-de-apache-en-linux.html
+
+
+#Archivo de configuracion de PHP para Apache
+	nano 
+	/etc/php/7.1/apache2/php.ini
+
+#Iniciar Servicio de Apache:
+	sudo service apache2 start
+#Detener servicio
+	sudo service apache2 stop
+#Reinicio de servicio.
+	sudo service apache2 restart

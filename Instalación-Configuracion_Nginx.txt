@@ -1,0 +1,45 @@
+PASOS PARA INSTALAR NGINX 
+- Obtener el coduigo fuente y descomprimir:
+	$ wget http://nginx.org/download/nginx-X.XX.X.tar.gz
+	$ tar -xzvf nginx-X.XX.X.tar.gz
+
+- Instalar librerias faltantes:
+	-pcre
+	apt-get install libpcre3 libpcre3-dev
+	- OpenSSL
+	apt-get install libssl-dev
+
+- Obtener el modulo si es que se desar agregar uno:
+	$ git clone https://github.com/arut/nginx-rtmp-module.git
+
+- Compilar con el modulo:
+	$ cd nginx-X.XX.X/
+	$ ./configure --with-compat --add-module=/path/to/nginx-rtmp-module
+	$ make
+	$ sudo make install
+
+-	Realizar los cambios en la configuración del servidor, 
+		-- se tiene que aplicar permisos de lectura y escritura a la carpeta en la siguiente ubicación:
+				cd /usr/local/nginx
+		-- Permisos a la carpeta
+			chmod -R 777 conf/
+		-- Modificar el archivo
+			nginx.conf
+
+- 	Crear carpetadas donde se almacenaran los archivos HLS y las grabaciones, darles todos los permisos
+
+- 	Iniciar el servidor desde el directorio de instalacion que es:
+	/usr/local/nginx/sbin
+	./nginx
+	./nginx -s stop -> Detiene el servidor
+	./nginx -s restart -> Reiniciar el servicio para aplicar cambios.
+
+
+	
+-- FUENTES DE CONSULTA
+https://www.nginx.com/blog/compiling-dynamic-modules-nginx-plus/
+https://www.digitalocean.com/community/tutorials/como-instalar-nginx-en-ubuntu-16-04-es
+https://stackoverflow.com/questions/3016956/how-do-i-install-the-openssl-libraries-on-ubuntu
+https://stackoverflow.com/questions/14045720/nginx-configure-error-ubuntu-12-04
+http://tech9n.com/how-to-install-nginx-hls-on-ubuntu-16-04-easy-obs/
+https://github.com/arut/nginx-rtmp-module/
